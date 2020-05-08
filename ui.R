@@ -1,6 +1,15 @@
+library(shiny)
+library(neo4r)
+library(tidyverse)
+library(visNetwork)
+library(igraph)
+library(scales)
+library(shinybusy)
+library(future.apply)
+
 ## Working Directory anpassen
 
-setwd("Z:/AG_NFR/neo4r")
+#setwd("Z:/AG_NFR/neo4r")
 
 #####
 
