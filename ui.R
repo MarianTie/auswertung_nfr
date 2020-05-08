@@ -1,4 +1,23 @@
+## Working Directory anpassen
 
+setwd("Z:/AG_NFR/neo4r")
+
+#####
+
+
+con <- neo4j_api$new(
+    url = "http://localhost:7474",
+    user = "neo4j", 
+    password = rstudioapi::askForPassword()
+)
+
+nodes <- readRDS("nodes.rds")
+edges <- readRDS("edges.rds")
+edges_prob <- edges
+nodes_prob <- nodes
+nodes_initial_scenarios <- nodes %>% filter(group == "scenario")
+
+dummy <- 0
 
 
 navbarPage(title = 
