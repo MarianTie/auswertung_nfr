@@ -29,7 +29,7 @@ nodes_initial_scenarios <- nodes %>% filter(group == "scenario")
 dummy <- 0
 
 
-navbarPage(title = 
+ui <- navbarPage(title = 
                      div(add_busy_spinner(spin = "fading-circle", color = "#005A83"),"Graph Analyse Tool", div(img(src="logo.png", style= "position: relative; top: -34px; right: -1750px;", height =50))), 
                  
                  tabPanel("Deskriptive Analyse",
@@ -83,7 +83,7 @@ navbarPage(title =
 ######################
 
 
-function(input, output, session) {
+server <- function(input, output, session) {
     
     
     #### update select knoten je nach auswahl der kategorie
@@ -1950,3 +1950,5 @@ function(input, output, session) {
     
     
 }
+
+shinyApp(ui = ui, server = server)
