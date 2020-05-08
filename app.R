@@ -1239,7 +1239,7 @@ server <- function(input, output, session) {
         updateSelectInput(session, "scenario_node",
                           label = "Wähle Szenario",
                           choices = unique(nodes_initial_scenarios$label),
-                          selected = scenario_node())
+                          selected = ifelse(input$group_node == "scenario", input$node, nodes_initial_scenarios[1,3]))
     })
     
     
