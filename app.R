@@ -68,7 +68,7 @@ ui <- navbarPage(title =
                                   actionButton("analyse", "Erhalte Auswertung", style='margin-bottom:2px'),
                                   actionButton("verteilung", "Starte Simulation"),width = 3),
                               mainPanel(
-                                  # verbatimTextOutput("test"),
+                                  #verbatimTextOutput("test"),
                                   # verbatimTextOutput("test1"),
                                   tableOutput("values"),
                                   visNetworkOutput("exp_val_2",width = "1300px", height = "250px"),
@@ -80,9 +80,10 @@ ui <- navbarPage(title =
 )
 
 
-######################
 
 
+
+# Define server logic
 server <- function(input, output, session) {
     
     
@@ -1232,7 +1233,6 @@ server <- function(input, output, session) {
                          nodes_cumprod_pro_path = dummy,
                          anzahl_simulationen = 0)
     
-    
     #selectInput("scenario_node", "Wähle Szenario", choices = unique(nodes_initial_scenarios$label), selected = )
     
     observe({
@@ -1243,7 +1243,8 @@ server <- function(input, output, session) {
     })
     
     
-    
+        
+
     
     observeEvent(input$analyse, {
         
@@ -1951,4 +1952,7 @@ server <- function(input, output, session) {
     
 }
 
+
+# Run the application 
 shinyApp(ui = ui, server = server)
+
